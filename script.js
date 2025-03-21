@@ -141,7 +141,7 @@ function page5Animation() {
     scrollTrigger: {
       trigger: ".page5",
       scroller: "body",
-      //   markers: true,
+      // markers: true,
       start: "top 50%",
       end: "top 10%",
       scrub: 2,
@@ -182,3 +182,16 @@ page1Animation();
 page3Animation();
 page4Animation();
 page5Animation();
+
+const hamburger = document.querySelector(".hamburger");
+const sidebar = document.querySelector(".mobile-navbar");
+
+hamburger.addEventListener("click", () => {
+  const isopened = hamburger.getAttribute("aria-expanded");
+  sidebar.classList.toggle("active");
+  if (isopened === "false") {
+    hamburger.setAttribute("aria-expanded", "true");
+  } else {
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+});
